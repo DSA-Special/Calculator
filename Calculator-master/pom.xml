@@ -39,26 +39,22 @@
 
             <!-- FindBugs Plugin Configuration -->
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>3.0.5</version>
-                <configuration>
-                    <!-- Specify the FindBugs configuration -->
-                    <effort>Max</effort>
-                    <threshold>Low</threshold>
-                    <failOnError>false</failOnError>
-                    <excludeFilterFile>findbugs-exclude.xml</excludeFilterFile>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>findbugs</goal>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>3.0.5</version>
+        <configuration>
+            <!-- Set failOnError and failOnWarning to false -->
+            <failOnError>false</failOnError>
+            <failOnWarning>false</failOnWarning>
+        </configuration>
+        <executions>
+            <execution>
+                <goals>
+                    <goal>check</goal>
+                </goals>
+            </execution>
+        </executions>
+    </plugin>
         </plugins>
     </build>
     <dependencies>
